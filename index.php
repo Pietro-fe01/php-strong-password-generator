@@ -1,64 +1,12 @@
 <?php 
-    if(!empty($_GET['pass-leng'])){
-        $counter = floor(($_GET['pass-leng']) / 4);
-    }
     $big_letters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","U","V","W","X","Y","Z"];
     $low_letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","u","v","w","x","y","z"];
     $numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-    $symbols = ['!', '@', '#', '-', '?', '_'];
+    $symbols = ['!', '@', '#', '-', '?', '_', '$', '&', '/'];
+    $counter = !empty($_GET['pass-leng']) ? floor(($_GET['pass-leng']) / 4) : '';
     $final_pass = [];
-
-    function randomPass($char, $CHAR, $numbers, $symbols, $final_pass, $counter) {
-        $pick_char = array_rand($char, $counter);
-        if($counter == 1){
-            $final_pass[] = $char[$pick_char];
-        } else {
-            foreach ($pick_char as $letter) {
-                $final_pass[] = $char[$letter];
-            }
-        }
-
-        $pick_CHAR = array_rand($CHAR, $counter);
-        if($counter == 1){
-            $final_pass[] = $CHAR[$pick_CHAR];
-        } else {
-            foreach ($pick_CHAR as $LETTER) {
-                $final_pass[] = $CHAR[$LETTER];
-            }
-        }
-
-        $pick_numbers = array_rand($numbers, $counter);
-        if($counter == 1){
-            $final_pass[] = $numbers[$pick_numbers];
-        } else {
-            foreach ($pick_numbers as $number) {
-                $final_pass[] = $numbers[$number];
-            }
-        }
-
-        $letters_left = $_GET['pass-leng'] - (floor(($_GET['pass-leng']) / 4) * 3);
-
-        $pick_symbols = array_rand($symbols, $letters_left);
-        if($letters_left == 1){
-            $final_pass[] = $symbols[$pick_symbols];
-        } else {
-            foreach ($pick_symbols as $symbol) {
-                $final_pass[] = $symbols[$symbol];
-            }
-        }
-
-        $a = 0;
-        $pass= [];
-        $final_pass_len = count($final_pass) - 1;
-        while ($a < count($final_pass)) {
-            $n = rand(0, $final_pass_len);
-            if (!in_array($final_pass[$n], $pass)){
-                $pass[] = $final_pass[$n];
-                $a++;
-            }
-        }
-        return implode($pass);
-    };
+    
+    include __DIR__ . '/functions.php';
 ?>
 
 <!DOCTYPE html>
@@ -100,7 +48,7 @@
                 <div class="form-right">
                     <!-- lunghezza caratteri password -->
                     <div class="pass-len-input mb-3">
-                        <input type="number" name="pass-leng" id="" min="4" required>
+                        <input type="number" name="pass-leng" id="" min="4" max="36" required>
                     </div>
 
                     <!-- scegliere se avere caratteri tutti diversi o no -->
