@@ -38,6 +38,12 @@
             }
         }
 
+        return implode(mergePassword($final_pass));
+    };
+
+    // Funzione che scambia la posizione di tutti i caratteri della password
+    // in modo dinamico
+    function mergePassword($final_pass){
         $a = 0;
         $pass= [];
         $final_pass_len = count($final_pass) - 1;
@@ -48,7 +54,5 @@
                 $a++;
             }
         }
-
-        $final_pass = $pass;
-        return implode($final_pass);
-    };
+        return $final_pass = $pass;
+    }
