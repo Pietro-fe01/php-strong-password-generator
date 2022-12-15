@@ -1,5 +1,14 @@
 <?php 
-
+    function randomPassword() {
+        $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#§-?_';
+        $pass = array();
+        $alphaLength = strlen($alphabet) - 1;
+        for ($i = 0; $i < $_GET['pass-leng']; $i++) {
+            $n = rand(0, $alphaLength);
+            $pass[] = $alphabet[$n];
+        }
+        return implode($pass);
+    }
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +30,9 @@
     </header>
     <main class="ms-container mt-5">
         <div class="output-field px-3 py-4 rounded">
-            <p class="m-0">Nessun parametro valido inserito</p>
+            <?php 
+                echo isset($_GET['pass-leng']) ? randomPassword() : "<p class=\"m-0\">Nessun parametro valido inserito</p>";
+            ?>
         </div>
         <div class="tools-container rounded mt-3 p-4">
             <form action="index.php" method="GET">
