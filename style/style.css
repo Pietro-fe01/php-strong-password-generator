@@ -52,3 +52,12 @@ form .form-right .radio-input,
 form .form-right .check-input{
     height: 80px;
 }
+
+.ms-info{
+    position: absolute;
+    background-color: white;
+    top: 50%;
+    left: 30px;
+    transform: translate(0, -50%);
+    padding: 15px;
+}
