@@ -4,3 +4,51 @@
 body{
     background-color: #001632;
 }
+
+/*---------------------------
+    RESET   
+----------------------------*/
+.ms-container{
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+}
+
+/*---------------------------
+    HEADER   
+----------------------------*/
+header{
+    color: #808b99;
+}
+
+/*---------------------------
+    MAIN
+----------------------------*/
+main .output-field{
+    background-color: #cff4fc;
+    color: #0b4554;
+}
+
+main .tools-container{
+    background-color: white;
+}
+
+main .tools-container form{
+    display: flex;
+}
+
+form .form-left{
+    width: 60%;
+}
+
+form .form-left div:nth-child(2){
+    height: 160px;
+}
+
+form .form-right{
+}
+
+form .form-right .radio-input,
+form .form-right .check-input{
+    height: 80px;
+}
