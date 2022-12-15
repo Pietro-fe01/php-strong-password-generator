@@ -47,7 +47,17 @@
             }
         }
 
-        return implode($final_pass);
+        $a = 0;
+        $pass= [];
+        $final_pass_len = count($final_pass) - 1;
+        while ($a < count($final_pass)) {
+            $n = rand(0, $final_pass_len);
+            if (!in_array($final_pass[$n], $pass)){
+                $pass[] = $final_pass[$n];
+                $a++;
+            }
+        }
+        return implode($pass);
     };
 ?>
 
