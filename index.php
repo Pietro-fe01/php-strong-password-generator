@@ -19,12 +19,12 @@
         <h1>Strong Password Generator</h1>
         <h3 class="text-white">Genera una password sicura</h3>
     </header>
-    <main class="ms-container mt-4">
+    <main class="ms-container mt-5">
         <div class="output-field px-3 py-4 rounded">
             <p class="m-0">Nessun parametro valido inserito</p>
         </div>
         <div class="tools-container rounded mt-3 p-4">
-            <form action="">
+            <form action="index.php" method="GET">
                 <!-- form left -->
                 <div class="form-left">
                     <div class="mb-3">Lunghezza password: </div>
@@ -45,11 +45,11 @@
                     <!-- scegliere se avere caratteri tutti diversi o no -->
                     <div class="radio-input">
                         <div>
-                            <input type="radio" name="repetition" id="repetition-true" checked>
+                            <input type="radio" name="repetition" id="repetition-true" value="true" checked>
                             <label for="repetition-true">Sì</label>
                         </div>
                         <div>
-                            <input type="radio" name="repetition" id="repetition-false">
+                            <input type="radio" name="repetition" id="repetition-false" value="false">
                             <label for="repetition-false">No</label>
                         </div>
                     </div>
@@ -57,15 +57,15 @@
                     <!-- Sceglier come comporre la password -->
                     <div class="check-input">
                         <div>
-                            <input type="checkbox" name="char-type" id="char-type-letters">
-                            <label for="char-type-letters">Lettere</label>
+                            <input type="checkbox" name="char-type-letters" id="char-type-letters" value="true" checked>
+                            <label for="char-type-letters">Lettere [a ~ z] [A ~ Z ]</label>
                         </div>
                         <div>
-                            <input type="checkbox" name="char-type" id="char-type-numbers">
+                            <input type="checkbox" name="char-type-numbers" id="char-type-numbers" value="true" checked>
                             <label for="char-type-numbers">Numeri</label>
                         </div>
                         <div>
-                            <input type="checkbox" name="char-type" id="char-type-symbols">
+                            <input type="checkbox" name="char-type-symbols" id="char-type-symbols" value="true" checked>
                             <label for="char-type-symbols">Simboli</label>
                         </div>
                     </div>
