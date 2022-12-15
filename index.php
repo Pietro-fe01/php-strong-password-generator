@@ -2,8 +2,8 @@
     if(!empty($_GET['pass-leng'])){
         $counter = floor(($_GET['pass-leng']) / 4);
     }
-    $big_letters = ['A', 'B', 'C', 'D', 'E'];
-    $low_letters = ['a', 'b', 'c', 'd', 'e'];
+    $big_letters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","U","V","W","X","Y","Z"];
+    $low_letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","u","v","w","x","y","z"];
     $numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
     $symbols = ['!', '@', '#', '-', '?', '_'];
     $final_pass = [];
