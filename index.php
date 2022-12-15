@@ -1,11 +1,4 @@
 <?php 
-    $big_letters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","U","V","W","X","Y","Z"];
-    $low_letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","u","v","w","x","y","z"];
-    $numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-    $symbols = ['!', '@', '#', '-', '?', '_', '$', '&', '/'];
-    $counter = !empty($_GET['pass-leng']) ? floor(($_GET['pass-leng']) / 4) : '';
-    $final_pass = [];
-    
     include __DIR__ . '/functions.php';
 ?>
 
@@ -28,8 +21,9 @@
     </header>
     <main class="ms-container mt-5">
         <div class="output-field px-3 py-4 rounded">
-            <?php 
-                echo !empty($_GET['pass-leng']) ? randomPass($low_letters, $big_letters, $numbers, $symbols, $final_pass, $counter) : "<p class=\"m-0\">Nessun parametro valido inserito</p>";
+            <?php
+                echo !empty($_GET['pass-leng']) ? 
+                "Password: " . randomPass($low_letters, $big_letters, $numbers, $symbols, $final_pass, $counter, $left_count) : "<p class=\"m-0\">Nessun parametro valido inserito</p>";
             ?>
         </div>
         <div class="tools-container rounded mt-3 p-4">
@@ -48,17 +42,17 @@
                 <div class="form-right">
                     <!-- lunghezza caratteri password -->
                     <div class="pass-len-input mb-3">
-                        <input type="number" name="pass-leng" id="" min="4" max="36" required>
+                        <input type="number" name="pass-leng" id="" min="4" required>
                     </div>
 
                     <!-- scegliere se avere caratteri tutti diversi o no -->
                     <div class="radio-input">
                         <div>
-                            <input type="radio" name="repetition" id="repetition-true" value="true" checked>
+                            <input type="radio" name="repetition" id="repetition-true" value="true">
                             <label for="repetition-true">Sì</label>
                         </div>
                         <div>
-                            <input type="radio" name="repetition" id="repetition-false" value="false">
+                            <input type="radio" name="repetition" id="repetition-false" value="false" checked>
                             <label for="repetition-false">No</label>
                         </div>
                     </div>
@@ -84,15 +78,15 @@
         </div>
     </main>
 
-    <div class="ms-info">
-            <h6>La password conterrà minimo 4 caratteri:</h6>
-            <ul>
-                <li>Almeno una lettera maiuscola;</li>
-                <li>Almeno una lettera minuscola;</li>
-                <li>Almeno un numero;</li>
-                <li>Almeno un simbolo speciale;</li>
-            </ul>
-        </div>
+    <!-- <div class="ms-info">
+        <h6>La password conterrà minimo 4 caratteri:</h6>
+        <ul>
+            <li>Almeno una lettera maiuscola;</li>
+            <li>Almeno una lettera minuscola;</li>
+            <li>Almeno un numero;</li>
+            <li>Almeno un simbolo speciale;</li>
+        </ul>
+    </div> -->
 
     <!-- Botstrap CDN js -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
