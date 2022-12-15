@@ -1,5 +1,6 @@
-<?php 
+<?php
     include __DIR__ . '/functions.php';
+    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +28,7 @@
             ?>
         </div>
         <div class="tools-container rounded mt-3 p-4">
-            <form action="index.php" method="GET">
+            <form action="server.php" method="GET">
                 <!-- form left -->
                 <div class="form-left">
                     <div class="mb-3">Lunghezza password: </div>
@@ -42,7 +43,7 @@
                 <div class="form-right">
                     <!-- lunghezza caratteri password -->
                     <div class="pass-len-input mb-3">
-                        <input type="number" name="pass-leng" id="" min="4" required>
+                        <input type="number" name="pass-leng" id="" min="4" required autofocus>
                     </div>
 
                     <!-- scegliere se avere caratteri tutti diversi o no -->

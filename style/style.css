@@ -33,6 +33,10 @@ main .tools-container{
     background-color: white;
 }
 
+main .tools-container p{
+    padding: 30px;
+}
+
 main .tools-container form{
     display: flex;
 }
