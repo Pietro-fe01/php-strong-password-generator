@@ -88,17 +88,22 @@
     // Funzione che scambia la posizione di tutti i caratteri della password
     // in modo dinamico
     function mergePassword($final_pass){
-        $a = 0;
-        $pass= [];
-        $final_pass_len = count($final_pass) - 1;
-        while ($a < count($final_pass)) {
-            $n = rand(0, $final_pass_len);
-            if (!in_array($final_pass[$n], $pass)){
-                $pass[] = $final_pass[$n];
-                $a++;
+        if($_GET['repetition'] === 'false'){
+            $a = 0;
+            $pass= [];
+            $final_pass_len = count($final_pass) - 1;
+            while ($a < count($final_pass)) {
+                $n = rand(0, $final_pass_len);
+                if (!in_array($final_pass[$n], $pass)){
+                    $pass[] = $final_pass[$n];
+                    $a++;
+                }
             }
+            return $final_pass = $pass;
+        } else {
+            shuffle($final_pass);
+            return $final_pass;
         }
-        return $final_pass = $pass;
     }
 
     // Troviamo il valore per cui dividere i tipi di dato: char, CHAR, numbers e symbols

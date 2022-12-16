@@ -1,6 +1,5 @@
 <?php
     include __DIR__ . '/functions.php';
-    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -49,11 +48,11 @@
                     <!-- scegliere se avere caratteri tutti diversi o no -->
                     <div class="radio-input">
                         <div>
-                            <input type="radio" name="repetition" id="repetition-true" value="true">
+                            <input type="radio" name="repetition" id="repetition-true" value="true" checked>
                             <label for="repetition-true">Sì</label>
                         </div>
                         <div>
-                            <input type="radio" name="repetition" id="repetition-false" value="false" checked>
+                            <input type="radio" name="repetition" id="repetition-false" value="false">
                             <label for="repetition-false">No</label>
                         </div>
                     </div>

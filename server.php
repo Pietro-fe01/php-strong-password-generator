@@ -1,6 +1,5 @@
 <?php
     include __DIR__ . '/functions.php';
-    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -22,6 +21,11 @@
                 Password: <?php echo randomPass($low_letters, $big_letters, $numbers, $symbols, $final_pass, $counter, $left_count) ?>
             </p>
         </div>
+        <button class="btn btn-primary">
+            <a href="index.php" class="text-white text-decoration-none">
+                Genera un'altra password!
+            </a>
+        </button>
     </main>
 
 
